@@ -7,7 +7,10 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://eventhub2.vercel.app',
+  credentials: true
+}));
 
 const mongoURI = process.env.MONGO_URI;
 let db;
