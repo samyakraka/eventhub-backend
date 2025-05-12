@@ -12,7 +12,10 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // ✅ Allowlist for CORS
-const allowedOrigins = ['https://eventhub2.vercel.app'];
+const allowedOrigins = [
+  'https://eventhub2.vercel.app',
+  'http://localhost:3000'
+];
 
 app.use(cors({
   origin: function (origin, callback) {
